@@ -1,0 +1,17 @@
+     AREA     appcode, CODE, READONLY
+     EXPORT __main
+	 ENTRY 
+__main  FUNCTION		         
+		MOV r2, #0x6
+		MOV r4, #0x2
+		MOV r7, #0x6
+		CMP r2, r7
+		ITTE NE
+		SUBNE r2, r2, r7
+		MOVNE r2, #0x0
+		ADDEQ r2, r2, r4
+		MOVEQ R4, #0x0
+Stop B Stop
+
+     ENDFUNC
+     END
