@@ -1,0 +1,32 @@
+     AREA     appcode, CODE, READONLY
+     EXPORT __main
+	 ENTRY 
+__main  FUNCTION		         
+		
+		MOV r0, #3 ;	
+		MOV r1, #5 ;	
+		MOV r2, #9 ;	
+		CMP r0, r1;	
+		BLT  LESS1 
+		CMP r0, r2 ;
+		BLT  LESS2   
+		MOV r3, r0 ; //r3 will get update by largest of 3 number
+		B STOP ;  		
+LESS1
+		CMP r1, r2 ;
+		BLT  LESS3
+		MOV r3, r1 ; //r3 will get update by largest of 3 number
+		B STOP ;  
+		
+LESS2
+		CMP r0, r2 ;	
+		BLT LESS3
+		MOV r3, r0 ;	//r3 will get update by largest of 3 number
+		B STOP ;  
+LESS3 
+		MOV r3, r2 ;  //r3 will get update by largest of 3 number
+
+
+STOP B STOP		 
+     ENDFUNC
+     END
