@@ -1,0 +1,19 @@
+     AREA     appcode, CODE, READONLY
+     EXPORT __main
+	 ENTRY 
+__main  FUNCTION		         
+		MOV r0, #3 ;	
+		MOV r1, #5 ;	
+LOOP
+		CMP r0, r1
+		BEQ STOP
+		BLT LESS
+		SUB r0, r1, r2
+		B LOOP
+LESS
+		SUB r1, r1, r0
+		B LOOP
+		
+STOP B STOP		 
+     ENDFUNC
+     END
